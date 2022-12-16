@@ -1,5 +1,5 @@
 {% set name = "pywhip" %}
-{% set version = "0.3.3" %}
+{% set version = "0.3.4" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pywhip-{{ version }}.tar.gz
-  sha256: 1283da938adc6372f8ee280d399084c3c76a415d395da2cf4b2a8ec94e1d4d8a
+  sha256: ee30d5182e34bbeb54dc6db06a784a770c41eff2f945b5ab09653821eba5f471
 
 build:
   number: 0
