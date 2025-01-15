@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pywhip-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pywhip-{{ version }}.tar.gz
   sha256: ee30d5182e34bbeb54dc6db06a784a770c41eff2f945b5ab09653821eba5f471
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - whip_csv=pywhip.cli:main
@@ -19,11 +19,11 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
     - pytest-runner
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - click >=6.0
     - python-dwca-reader ==0.13.0
     - cerberus ==1.3.4
@@ -40,6 +40,7 @@ test:
     - whip_csv --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/inbo/pywhip
